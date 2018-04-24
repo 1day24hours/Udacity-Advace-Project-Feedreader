@@ -121,10 +121,8 @@ $(function() {
                 });
             });
         });
+        it('Feed will be changed when loading different feeds', function () {
+            expect($('.feed').text() != feedZero).toBe(ture);
+        })
     })
-
-    it('Feed will be changed when loading different feeds',function () {
-        expect($('.feed').text()!= feedZero).toBe(ture);
-    })
-
 }());
