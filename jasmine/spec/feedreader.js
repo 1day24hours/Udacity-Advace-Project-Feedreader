@@ -38,6 +38,8 @@ $(function() {
             allFeeds.forEach(function (feed) {
                 expect(feed.url).toBeDefined;
                 expect(feed.url).not.toEqual('');
+                //var regularExpressionUrl = _^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS;
+                //expect(feed.url).toMatch(regularExpressionUrl);
             })
         })
 
@@ -47,8 +49,9 @@ $(function() {
          */
         it('Feeds have name defined and not empty',function () {
             allFeeds.forEach(function (feed) {
-                expect(feed.name).toBeDefined;
-                expect(feed.name).not.toEqual('');
+                // expect(feed.name).toBeDefined;
+                // expect(feed.name).not.toEqual('');
+                expect(feed.name).toBeTruthy();//toBeTruthy() equals '!!' turn it into boolean value
             })
         })
     });
@@ -75,10 +78,12 @@ $(function() {
         it('The menu display or hidden by click',function () {
             //this is an event, click and show the menu,but didn't select anything
             $('.icon-list').click();
-            expect($('.menu-hidden').length).toBe(0);
+            // expect($('.menu-hidden').length).toBe(0);
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             $('.icon-list').click();
             //click menu bar again,should be clicked something
-            expect($('.menu-hidden').length).toBe(1);
+            // expect($('.menu-hidden').length).toBe(1);
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         })
     })
     
@@ -120,9 +125,9 @@ $(function() {
                     done();
                 });
             });
-        });
+        }, 10*1000);
         it('Feed will be changed when loading different feeds', function () {
-            expect($('.feed').text() != feedZero).toBe(ture);
+            expect($('.feed').text() != feedZero).toBe(true);
         })
     })
 }());
