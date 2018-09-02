@@ -10,6 +10,11 @@
 
 * Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
 
+## 运行 How to run?
+
+* 在新页面中加载 index.html 文件
+* Load the index.html file in a new webpage
+
 ## 我将学习到什么内容？ What will I learn?
 * 如何使用 Jasmine 针对预先存在的应用程序 编写多种测试。测试内容包括应用程序的 底层业务逻辑、事件处理和 DOM 操作。
 * I will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
