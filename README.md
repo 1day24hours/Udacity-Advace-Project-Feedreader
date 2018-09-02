@@ -1,4 +1,7 @@
 ## 项目概述 Project Overview
+
+![FeedReader](https://github.com/1day24hours/Udacity-Advace-Project-Feedreader/blob/master/gif/Feed-Reader.gif)
+
 * 本工具/仓库是前端纳米学位阅读器测试项目。旨在学习、体验使用 Jasmine 测试框架相关知识。
 * This tool/repository is a front-end nano-degree reader test project. Designed to learn and experience using the Jasmine testing framework.
 
